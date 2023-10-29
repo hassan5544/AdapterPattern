@@ -1,3 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using AdapterPattern;
 
-Console.WriteLine("Hello, World!");
+class Program
+{
+    public static void Main()
+    {
+        OldPamentMethod old = new OldPamentMethod();
+        IPaymentAdapter newPaymentMethod = new NewPaymentMethhod(old);
+
+        Console.WriteLine(newPaymentMethod.PaymentMethod());
+    }
+}
